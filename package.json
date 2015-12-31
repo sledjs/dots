@@ -1,0 +1,16 @@
+{
+  "name": "dots",
+  "version": "0.1.0-beta",
+  "description": "...",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sledjs/dots.git"
+  },
+  "author": "Damian Martyniak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sledjs/dots/issues"
+  },
+  "homepage": "https://github.com/sledjs/dots#readme"
+}
