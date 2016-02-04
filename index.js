@@ -5,7 +5,8 @@ export default class Dots {
     if (domModules.dots) {
       [this.$dots, this.slides] = [domModules.dots, $core.modules.slides];
 
-      this.slides.broadcast.push(_=> this.lightDot(_));
+      this.slides
+        .on('change', n => this.lightDot(n));
 
       this.fillDots();
     }
