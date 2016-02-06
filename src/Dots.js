@@ -22,9 +22,10 @@ class Dots {
     let id = which || this.slides.slide;
     let $dots = this.$dots.children;
 
-    if (this.$prevDot != undefined) $dots[this.$prevDot].style.background = '#eee';
+    if (this.$prevDot != undefined)
+      $dots[this.$prevDot].classList.toggle('active');
 
-    $dots[id].style.background = '#000';
+    $dots[id].classList.toggle('active');
     this.$prevDot = id;
   }
 
