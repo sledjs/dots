@@ -3,29 +3,42 @@
 .sled
 
   .dots
-    @extend .flex, .between
     box-sizing border-box
     position absolute
-    padding 0 2em
+    text-align center
+    overflow hidden
     bottom 1em
-    width 100%
     z-index 1
+    width 100%
 
-    .dot
-      width 2em
-      height @width
-      cursor pointer
-      background #fff
-      transition .5s
-      border-radius 50%
-      box-shadow 0 .1em .2em rgba(#000, .5)
+    .dotsWrapper
+      @extend .flex-line, .between
+      width 100%
+      overflow-x scroll
+      padding .25em
+      width auto
+      z-index 3
 
-      &:hover
-        transition .2s
-        background #ddd
-        transform scale(1.1)
+      &::-webkit-scrollbar
+        display none
 
-      &.active, &:active
-        background rebeccapurple
-        transition .2s
-        transform scale(.9)
+      .dot
+        @extend .fn-shrink
+        margin 0 .5em
+        width 2em
+        height @width
+        cursor pointer
+        background #fff
+        transition .5s
+        border-radius 50%
+        box-shadow 0 .1em .2em rgba(#000, .5)
+
+        &:hover
+          transition .2s
+          background #ddd
+          transform scale(1.1)
+
+        &.active, &:active
+          background rebeccapurple
+          transition .2s
+          transform scale(.9)

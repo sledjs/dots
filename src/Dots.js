@@ -20,7 +20,7 @@ class Dots {
 
   lightDot(which) {
     let id = which || this.slides.slide;
-    let $dots = this.$dots.children;
+    let $dots = this.$dots.children[0].children;
 
     if (this.$prevDot != undefined)
       $dots[this.$prevDot].classList.toggle('active');
@@ -33,14 +33,14 @@ class Dots {
     let dotsId = this.slides.$.children.length;
     let $dots = [];
 
-    this.$dots.innerHTML = '';
+    this.$dots.innerHTML = '<div class="dotsWrapper"></div>';
     if (!this.$dot) this.makeDot();
 
     while (dotsId--) $dots.push(this.$dot.cloneNode());
 
     $dots.forEach(($dot, id) => {
       $dot.onclick = _=> this.slides.changeTo(id);
-      this.$dots.appendChild($dot);
+      this.$dots.children[0].appendChild($dot);
     });
 
     this.lightDot();
