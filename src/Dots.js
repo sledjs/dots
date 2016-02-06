@@ -3,7 +3,7 @@ class Dots {
     this.slides = core.modules.slides;
 
     this.slides
-      .on('change', this.lightDot);
+      .on('change', this.lightDot.bind(this));
 
     this.fillDots();
   }
@@ -15,6 +15,23 @@ class Dots {
     this.$dot = dot;
   }
 
+  focus($dot) {
+    clearInterval(this.interval);
+    this.interval = setInterval(_ => {
+      let sliderCenter = this.$.getBoundingClientRect().width / 2 | 0;
+      let rect = $dot.getBoundingClientRect();
+      let dotCenter = rect.left + rect.width / 2 | 0;
+      let scrollLeft = this.$.scrollLeft;
+
+      this.$.scrollLeft += dotCenter > sliderCenter ? 1 : -1;
+
+      if (dotCenter == sliderCenter || scrollLeft == this.$.scrollLeft)
+        clearInterval(this.interval);
+    });
+
+    $dot.classList.toggle('active');
+  }
+
   lightDot(which) {
     let id = which || this.slides.slide;
     let $dots = this.$.children[0].children;
@@ -22,7 +39,7 @@ class Dots {
     if (this.$prevDot != undefined)
       $dots[this.$prevDot].classList.toggle('active');
 
-    $dots[id].classList.toggle('active');
+    this.focus($dots[id]);
     this.$prevDot = id;
   }
 

@@ -8,19 +8,12 @@
     text-align center
     overflow hidden
     bottom 1em
-    z-index 1
     width 100%
+    z-index 1
 
     .dotsWrapper
       @extend .flex-line, .between
-      width 100%
-      overflow-x scroll
       padding .25em
-      width auto
-      z-index 3
-
-      &::-webkit-scrollbar
-        display none
 
       .dot
         @extend .fn-shrink
