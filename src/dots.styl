@@ -1,0 +1,17 @@
+@import '~flexstyl/index'
+
+
+.sled
+  .dots
+    position absolute
+    bottom 1em
+    box-sizing border-box
+    padding 0 2em
+    @extend .flex, .between
+    width 100%
+    .dot
+      width 2em
+      height @width
+      background #fff
+      border-radius 50%
+      box-shadow 0 .1em .2em rgba(#000, .5)
