@@ -14,10 +14,18 @@
     .dot
       width 2em
       height @width
+      cursor pointer
       background #fff
       transition .5s
       border-radius 50%
       box-shadow 0 .1em .2em rgba(#000, .5)
 
-      &.active
-        background teal
+      &:hover
+        transition .2s
+        background #ddd
+        transform scale(1.1)
+
+      &.active, &:active
+        background rebeccapurple
+        transition .2s
+        transform scale(.9)
