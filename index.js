@@ -1,7 +1,7 @@
 import Dots from './src/Dots';
 import './src/dots.styl';
 
-export default {
+module.exports = {
   class: Dots,
   name: 'dots',
   peer: '$',
