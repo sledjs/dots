@@ -2,8 +2,8 @@
 [Sled](https://github.com/sledjs/sled) module
 
 ## cdn
-* [dots.js](https://npmcdn.com/@sled/dots/lib/dots)
-* [dots.css](https://npmcdn.com/@sled/dots/lib/dots.css)
+* [dots.js](https://unpkg.com/@sled/dots/lib/dots)
+* [dots.css](https://unpkg.com/@sled/dots/lib/dots.css)
 
 ## npm
 ```sh
